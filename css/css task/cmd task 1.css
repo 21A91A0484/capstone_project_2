@@ -1,0 +1,39 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+.a{
+	height: 400px;
+	width: 800px;
+	background-color:ghostwhite;
+}
+.b{
+	height: 350px;
+	width: 200px;
+	float: left;
+	background-color: white;
+	margin: 20px 1px 20px 60px;
+	border-radius: 40px;
+}
+.c{
+	height: 350px;
+	width: 200px;
+	float: left;
+	background-color: white;
+	margin: 20px 1px 20px 20px;
+	border-radius: 40px;
+}
+.d{
+	height: 350px;
+	width: 200px;
+	float: left;
+	background-color: white;
+	margin: 20px 10px 20px 20px;
+	border-radius: 40px;
+}
+.abc{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+}

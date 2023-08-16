@@ -1,0 +1,12 @@
+input[type="text"]{
+	color: blue;
+	font-family: cursive;
+}
+input[type="number"]{
+	color: green;
+	font-family: cursive;
+
+}
+a:hover{
+	color: red;
+}
