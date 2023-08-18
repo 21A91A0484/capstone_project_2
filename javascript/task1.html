@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript</title>
+</head>
+<body>
+	<script>
+		var name = 'haneefa';
+		name += ' Trishu'
+		name += ',Subhigna';
+		document.write(name)
+		var name = 'haneefa';
+		document.write('<br>',typeof(name),name);
+		var a = 20;
+		document.write('<br>',typeof(a), a);
+		var b = 20.76;
+		document.write('<br>',typeof(b), b);
+		var c;
+		c += 'haneefa';
+		document.write('<br>',c);
+		var c;
+		c = 'haneefa';
+		document.write('<br>',c);
+		var a = true;
+		document.write('<br>',typeof(a));
+		var arr = ['haneefa',2,true];
+		document.write('<br>',arr)
+		document.write('<br>',typeof(arr))
+		var arr = ['haneefa','subhigna','Trishu','mounika'];
+		console.log(arr);
+		document.write('<br>',arr[1]," ",arr[2]);
+		var obj={
+			'name':'Trishu',
+			'rollno':484,
+			'college':'AEC',
+			'branch':'ECE'
+		}
+		document.write('<br>',obj.name,'<br>');
+		document.write(obj.name," ",obj.rollno," ",obj.college," ",obj.branch);
+		console.log(obj.name," ",obj.rollno," ",obj.college," ",obj.branch)
+		var abc=[{
+			'name':'Haneefa',
+			'rollno':484,
+			'college':'AEC',
+			'branch':'ECE'
+		},
+		{
+			'name':'Trishu',
+			'rollno':567,
+			'college':'AEC',
+			'branch':'civil'
+			}]
+		console.log(abc[0].name," ",abc[0].rollno," ",abc[0].college," ",abc[0].branch);
+		console.log(abc[1].name," ",abc[1].rollno," ",abc[1].college," ",abc[1].branch);
+		document.write('<br>',abc[0].name," ",abc[0].rollno," ",abc[0].college," ",abc[0].branch);
+		document.write('<br>',abc[1].name," ",abc[1].rollno," ",abc[1].college," ",abc[1].branch,"<br>");
+		var std=[{
+			'name':'Haneefa',
+			'rollno':484,
+			'college':'AEC',
+			'branch':'ECE'
+		},
+		{
+			'name':'Trishu',
+			'rollno':567,
+			'college':'AEC',
+			'branch':'civil'
+			},
+			{
+			'name':'mounika',
+			'rollno':785,
+			'college':'pragati',
+			'branch':'ECE'
+		},
+		{
+			'name':'deepthi',
+			'rollno':877,
+			'college':'gitam',
+			'branch':'ECE'
+		},
+		{
+			'name':'chandini',
+			'rollno':678,
+			'college':'ideal',
+			'branch':'ECE'
+		},]
+		// for(var i=0;i<std.length;i++){
+		// 	console.log(std[i])
+		// }
+		// for (var i = 0;std.length;i++) {
+		// 	console.log(i,std[i].name,std[i].rollno,std[i].branch,std[i].college);
+		// 	document.write(i,std[i].name,std[i].rollno,std[i].branch,std[i].college);
+		// }
+		for (var i = 0; i < std.length; i++) { 
+		  var obj = std[i];
+		  for (var key in obj) { 
+		    console.log(obj[key]);
+		    document.write(obj[key]);
+		  }
+		  document.write("<br>")
+		}
+
+
+	</script>
+
+</body>
+</html>

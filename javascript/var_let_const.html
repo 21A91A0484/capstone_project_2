@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>var,let,const</title>
+</head>
+<body>
+	<h1>var,let and const</h1>
+	<script type="text/javascript">
+		var a = 10;// re-declaration is possible and re-initialize is possible
+			a = 50
+		document.write(a)
+		let b = 20;// re-initialize is possible and re-declaration is not possible
+			b = 30;
+		document.write(b)
+		//block-level element
+		{
+			let c = 30;
+			document.write(c);
+		}
+		//document.write(c); // outer block doesn't work
+		const x = 397;
+		const r = 679;// re-declaration is possible and re-initialize is not possible
+		document.write(x);
+		document.write(r);
+
+		const name = 'Haneefa';
+		document.write("<br>",name);
+	</script>
+</body>
+</html>

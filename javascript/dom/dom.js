@@ -1,0 +1,1 @@
+document.getElementById('tt1').style.color = 'blue';
