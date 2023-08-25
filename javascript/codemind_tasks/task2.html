@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add key/value pair to an object</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var std=[{
+			'name':'Haneefa',
+			'rollno':484,
+			'college':'AEC',
+			'branch':'ECE'
+		},
+		{
+			'name':'Trishu',
+			'rollno':567,
+			'college':'AEC',
+			'branch':'civil'
+			},
+			{
+			'name':'mounika',
+			'rollno':785,
+			'college':'pragati',
+			'branch':'ECE'
+		},
+		{
+			'name':'deepthi',
+			'rollno':877,
+			'college':'gitam',
+			'branch':'ECE'
+		},
+		{
+			'name':'chandini',
+			'rollno':678,
+			'college':'ideal',
+			'branch':'ECE'
+		},]
+		for (var i = 0; i < std.length; i++) { 
+		  var obj = std[i];
+		  for (var key in obj) { 
+		    document.write(obj[key]);
+		  }
+		  document.write("<br>")
+		}
+
+	</script>
+
+</body>
+</html>

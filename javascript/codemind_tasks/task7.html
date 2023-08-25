@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Palindrome or not</title>
+</head>
+<body>
+	<script>
+	    function abc(s) {
+		    let len = s.length;
+		    for (let i = 0; i < len / 2; i++) {
+		        if (s[i] !== s[len - 1 - i]) {
+		            return 'not a palindrome';
+		        }
+		    }
+		    return 'palindrome';
+		}
+		let s = prompt('Enter a string: ');
+		let v = abc(s);
+
+		document.write(v);
+	</script>
+
+
+</body>
+</html>

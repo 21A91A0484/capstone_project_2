@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Even and Odd sum</title>
+</head>
+<body>
+  <script type="text/javascript">
+      function num(numbers) {
+      let even = 0;
+      let odd = 0;
+
+      for (const number of numbers) {
+        if (number % 2 === 0) {
+          even += number;
+        } else {
+          odd += number;
+        }
+      }
+
+      return {
+        even: even,
+        odd: odd
+      };
+    }
+
+    const NumArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const result = num(NumArray);
+
+    document.write("Array:", NumArray,"<br>");
+    document.write("even sum:", result.even,"<br>");
+    document.write("odd sum:", result.odd);
+
+  </script>
+
+</body>
+</html>

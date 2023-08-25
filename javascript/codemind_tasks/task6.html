@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fabonacci sequence</title>
+</head>
+<body>
+	<script type="text/javascript">
+		fabonacci=(a)=>{
+			let ab=[5,7];
+			for(let i=2;i<a;i++){
+				ab[i]=ab[i-1]+ab[i-2];
+			}
+			return ab
+		}
+		let n=20
+		let ab=fabonacci(n);
+		document.write(`fibonacci sequence ${n}:${ab.join(',')}`);
+	</script>
+
+</body>
+</html>
