@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Array Methods</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// map()
+		let trainees1 = [{
+			'name':'subhigna',
+			'rollno':'123'
+		},{
+			'name':'trishu',
+			'rollno':'1230'
+		}]
+		trainees1.map(test)
+		function test(individual_trainee,i,arr){
+			document.write(individual_trainee.name+" "+individual_trainee.rollno)
+			document.write("<br>")
+		};
+
+		// filter
+		const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		const oddNumbers = numbers.filter(function(number) {
+		  return number % 2 !== 0;
+		});
+		document.write(oddNumbers); 
+		// sort
+		const nb = [10, 5, 8, 1, 7];
+		nb.sort(function(a, b) {
+		  return a - b;
+		});
+		document.write("<br>"+nb);
+
+		// foreach
+
+		const colors = ['red', 'green', 'blue'];
+		colors.forEach(function(color) {
+			document.write("<br>"+color);
+		});
+		// concat
+		const array1 = [1, 2, 3];
+		const array2 = [4, 5, 6];
+		const array3 = [7, 8, 9];
+
+		const combinedArray = array1.concat(array2, array3);
+		document.write("<br>"+combinedArray);
+
+		// every
+		const ns = [2, 4, 6, 8, 10];
+		const allEven = ns.every(function(number) {
+		  return number % 2 === 0;
+		});
+		document.write("<br>"+allEven);
+
+		// some
+		const nu = [1, 3, 5, 7, 9];
+		const han = nu.some(function(number) {
+		  return number % 2 === 0;
+		});
+		document.write("<br>"+han); 
+
+		// includes
+		const fruits = ['apple', 'banana', 'orange'];
+		const hasBanana = fruits.includes('banana');
+		document.write("<br>"+hasBanana); 
+		const hasGrape = fruits.includes('grape');
+	    document.write("<br>"+hasGrape);
+
+		// join
+		const mixedArray = [1, 'two', 3, 'four'];
+
+		const joinedMixed = mixedArray.join(', ');
+		document.write("<br>"+joinedMixed); 
+
+		// reduce
+		const n = [123,345,67];
+		 n.reduce(fun);
+		 function fun(total,num){
+		 	return total - num;
+		 	
+		 };
+
+		// find
+		 const people = [
+		  { 'name': 'haneefa',
+		   age: 25 },
+		  { 'name': 'subhi',
+		   'age': 30 },
+		  { 'name': 'anshu', 
+		   'age': 22 }
+		];
+		const person = people.find(function(person) {
+		  return person.age === 30;
+		});
+    	document.write("<br>"+person);
+
+		// findindex
+		const rs = [10, 20, 30, 40, 50];
+		const index = rs.findIndex(function(number) {
+		  return number > 30;
+		});
+		document.write("<br>"+index); // Output: 3
+
+		// indexof
+		const f = ['apple', 'banana', 'orange'];
+		const bananaIndex = f.indexOf('banana');
+		document.write("br>"+bananaIndex);
+		const grapeIndex = f.indexOf('grape');
+		document.write("br>"+grapeIndex);
+
+		// fill
+		const ms = [1, 2, 3, 4, 5];
+		ms.fill(0, 2, 4);
+		document.write("<br>"+ms); 
+
+		// slice
+		const l = ['red', 'green', 'blue', 'yellow', 'orange'];
+		const slicedColors = l.slice(1, 4);
+		document.write("<br>"+slicedColors);
+
+		// reverse
+		const ab = [1, 2, 3, 4, 5];
+		ab.reverse();
+		document.write("<br>"+ab);
+
+		// push
+		const ri = ['apple', 'banana'];
+
+		ri.push('orange', 'grape');
+
+		document.write("<br>"+ri); 
+
+		// pop
+		const br = [1, 2, 3, 4, 5];
+		const removedNumber = br.pop();
+		document.write("<br>"+br); 
+		document.write("<br>"+removedNumber); 
+
+		// shift
+		const ts = ['apple', 'banana', 'orange'];
+		const removedFruit = ts.shift();
+		document.write("<br>"+ts); 
+		document.write("<br>"+removedFruit);
+
+		// unshift
+		const 	arr = ['red', 'green'];
+		arr.unshift('blue', 'yellow');
+		document.write("<br>"+arr); 
+
+	</script>
+
+</body>
+</html>
