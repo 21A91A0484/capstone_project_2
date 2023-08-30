@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Substring</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let name = 'Mohammad Haneefa';
+
+		function getstr(str){
+			document.write("<b>"+str+"</b>")
+		}
+		// substr
+		getstr("substr() :"+name.substr(0,4)+"<br>");
+
+		// substring
+		getstr("substring :"+name.substring(5,1)+"<br>");
+
+		// replace
+		getstr("replace :"+name.replace('Mohammad','MD.'));
+
+		// toLowerCase
+		getstr("<br> toLowerCase :"+name.toLowerCase())
+
+		// toUpperCase
+		getstr("<br> toUpperCaseCase :"+name.toUpperCase())
+
+		// indexOf
+		getstr("<br> indexOf :"+name.indexOf('Haneefa'))
+
+		// includes
+		getstr("<br> includes :"+name.includes('Haneefa'));
+
+		// slice
+		getstr("<br> slice :"+name.slice(1,6))
+
+		// concat
+		let name1 = 'Drive'
+		getstr("<br> concat :"+name.concat(name1))
+
+		// lastIndexOf
+		getstr("<br> lastIndexOf :"+name.indexOf('han'))
+
+		// charCodeAt
+		getstr("<br> charCodeAt :"+name.charCodeAt(8));
+
+		// charAt
+		getstr("<br> charAt :"+name.charAt(3))
+
+		// trim
+		let username = '  haneefa    _'
+		getstr("<br> trim :"+username.trim())
+
+
+		// split
+		getstr("<br> split :"+name.split(""))
+
+		// valueof
+		getstr("<br> valueof :"+name.valueOf());
+
+		// match
+		const text = "Hello, how are you?";
+		const pattern = "how";
+		const result = text.match(pattern);
+		getstr("<br> valueof :"+result)
+
+		// tostring
+		const array = [1, 2, 3];
+		getstr("<br> tostring :"+array.toString());
+
+		// search
+		getstr("<br> search :"+name.search("haneefa"));
+ 
+	</script>
+	
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>find()</title>
+</head>
+<body>
+	<p>this method returns the value when condition is satisfied then exist from the iteration loop.</p>
+	<script type="text/javascript">
+		let trainees = ['subhi','anshu','mouni','kd'];
+		let getonename = trainees.find(function(name){
+			return name.startsWith('a');
+		})
+		// or 
+		// let getonename = trainees.find(test)
+		// function.test(name){
+		// 	return name.startsWith('s');
+		// }
+		console.log(getonename);
+	</script>
+
+</body>
+</html>

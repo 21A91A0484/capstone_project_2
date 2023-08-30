@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+</head>
+<body>
+	<table border="1" cellspacing="0" id="table_id"></table>
+	<ul type="square" id="ul_li"></ul>
+	<div id="div_id" style="border: 1px solid black;"></div>
+	<script type="text/javascript">
+		var trainees=[{
+			'name' : 'haneefa',
+			'rollno' : 484,
+			'college' : 'AEC'
+		},
+		{
+			'name' : 'swathi',
+			'rollno' : 407,
+			'college' : 'ACOE'
+		},
+		{
+			'name' : 'lakshmi',
+			'rollno' : 578,
+			'college' : 'AEC'		}
+		]
+		let vi='';
+		let ki='';
+		let mi='';
+		trainees.map(function(aaa,i,arr)
+		{
+			vi+="<tr><td>"+(i+1)+"</td><td>"+aaa.name+"</td><td>"+aaa.rollno+"</td><td>"+aaa.college+"</td></tr>";
+			ki+="<li>"+aaa.name+"   "+aaa.rollno+"    "+aaa.college+"</li>";
+			mi+="<p>"+aaa.name+"   "+aaa.rollno+"    "+aaa.college+"</p>";
+
+		})
+		console.log(vi);
+		document.getElementById('table_id').innerHTML=vi;
+		document.getElementById('ul_li').innerHTML=ki;
+		document.getElementById('div_id').innerHTML=mi;
+	</script>
+</body>
+</html>
