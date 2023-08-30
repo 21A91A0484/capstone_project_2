@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Regular Expression</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// let str = 'han';
+		let re = /batch/;
+		let output = re.test("fullstack batch");
+		// console.log(output);
+
+		//case sensitive
+		let re1 = /batch/i;
+		let output1 = re1.test("fullstack BATCH")
+		console.log(output1);
+
+		a = /^b/;
+		output2 = a.test('batch');  // true
+		//output2 = a.test("tbatch"); // false
+		console.log(output2);
+
+		let a1 = "batch";
+		re1 = new RegExp('{a1}')
+		output3 = re1.test("fullstack batch");
+		console.log(output3)
+
+		a2 = /batch/g; //  g for multiple indexes
+		res = a2.exec("full stack batch course batch");
+		console.log(res);
+		console.log(res.index)
+		res = a2.exec("full stack batch course batch");
+		console.log(res.index)
+
+		//number 
+		a3 = /^[0-9]{10}/
+		output4 = a3.test("8019422112"); //exceed the range withot $ symbol
+		console.log(output4)
+		// if(output4==true){
+		// 	alert("correct")
+		// }else{
+		// 	alert("wrong")
+		// }
+
+		a4 = /^[0-9]{10}$/
+		let n1 = '976456789';
+		output5 = a4.test(n1);
+		console.log(output5)
+
+	</script>
+
+</body>
+</html>

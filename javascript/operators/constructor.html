@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>constructor</title>
+</head>
+<body>
+	<h2>constructor</h2>
+	<script type="text/javascript">
+		class student{
+			constructor(rno,fname,name){
+				 this.rollno = rno
+				 this.name = fname
+				 this.lname = name
+				 this.getfullname = function(){
+					return this.rollno+" "+this.name
+				} 
+			}
+		} 
+		// let obj = new student(1234,'haneefa')
+		// console.log(obj.rollno,obj.name)
+		// let tr = new student(5677,'anshu')
+		// console.log(tr.rollno,tr.name)
+		let trainee = new student(1234,'haneefa',"md")
+		console.log(trainee.getfullname())
+
+		// class car{
+		// 	constructor(price,color){
+		// 		this.price1 = price
+		// 		this.color1 = color
+
+		// 	}
+		// }
+		// let car1 = new car(19000,'black')
+		// console.log(car1.price1,car1.color1)
+	</script>
+</body>
+</html>

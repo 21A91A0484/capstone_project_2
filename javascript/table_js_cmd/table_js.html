@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-button-container {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        button.add-button {
+            background-color: lightblue; /* Light blue color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 30px; /* Make the edges more semi-circular */
+        }
+        .add-button-text {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .editable input {
+            border: none; /* Remove border for input fields in editable rows */
+            width: 100%;
+            pointer-events: none; /* Disable pointer events by default */
+        }
+        .editable.editing input {
+            pointer-events: auto; /* Enable pointer events when editing */
+        }
+        .delete-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: red;
+        }
+        /* Style the custom edit icon */
+        .custom-edit-icon {
+            color: orange; /* Set the color to orange */
+        }
+        .custom-save-icon {
+            color: green; /* Set the color to green for save/tick icon */
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Details</h2>
+    <div class="add-button-container">
+        <!-- Styled the "+ Add New" button with more semi-circular edges -->
+        <button id="addButton" class="add-button">
+            <span class="add-button-text">+ Add New</span>
+        </button>
+    </div>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Default rows with input fields -->
+            <tr class="editable">
+                <td><input type="text" value="456789" disabled></td>
+                <td><input type="text" value="Mobile" disabled></td>
+                <td><input type="text" value="1600" disabled></td>
+                <td><button class="custom-edit-button" onclick="toggleEdit(this)"><i class="fas fa-pencil-alt custom-edit-icon"></i></button><button class="delete-button" onclick="confirmDelete(this)"><i class="fas fa-trash"></i></button></td>
+            </tr>
+            <tr class="editable">
+                <td><input type="text" value="123456" disabled></td>
+                <td><input type="text" value="Laptop" disabled></td>
+                <td><input type="text" value="1200" disabled></td>
+                <td><button class="custom-edit-button" onclick="toggleEdit(this)"><i class="fas fa-pencil-alt custom-edit-icon"></i></button><button class="delete-button" onclick="confirmDelete(this)"><i class="fas fa-trash"></i></button></td>
+            </tr>
+            <tr class="editable">
+                <td><input type="text" value="789012" disabled></td>
+                <td><input type="text" value="Tablet" disabled></td>
+                <td><input type="text" value="500" disabled></td>
+                <td><button class="custom-edit-button" onclick="toggleEdit(this)"><i class="fas fa-pencil-alt custom-edit-icon"></i></button><button class="delete-button" onclick="confirmDelete(this)"><i class="fas fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Function to toggle between edit (pencil) and save (tick) icons
+        function toggleEdit(button) {
+            var row = button.parentNode.parentNode;
+            var icon = button.querySelector('i');
+
+            // Check if the icon is currently the edit icon
+            if (icon.classList.contains('fa-pencil-alt')) {
+                // Switch to the save (tick) icon
+                icon.classList.remove('fa-pencil-alt');
+                icon.classList.add('fa-check-circle');
+                icon.classList.add('custom-save-icon');
+                // Enable the input fields for editing
+                row.classList.add('editing'); // Add 'editing' class to row
+                var inputs = row.querySelectorAll('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+            } else {
+                // Switch back to the edit (pencil) icon
+                icon.classList.remove('fa-check-circle');
+                icon.classList.remove('custom-save-icon');
+                icon.classList.add('fa-pencil-alt');
+                // Disable the input fields for editing
+                row.classList.remove('editing'); // Remove 'editing' class from row
+                var inputs = row.querySelectorAll('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = true;
+                }
+            }
+        }
+
+        // Function to delete a row with confirmation dialog
+        function confirmDelete(button) {
+            var row = button.parentNode.parentNode;
+            if (window.confirm('Do you want to delete the record?')) {
+                row.parentNode.removeChild(row);
+            }
+        }
+
+        // Add an event listener to the "+ Add New" button
+        document.getElementById("addButton").addEventListener("click", function () {
+            addRow();
+        });
+
+        // Function to add a new row to the table
+        function addRow() {
+            var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            newRow.classList.add("editable"); // Apply the "editable" class to new rows
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            cell1.innerHTML = '<input type="text" placeholder="Product ID">';
+            cell2.innerHTML = '<input type="text" placeholder="Name">';
+            cell3.innerHTML = '<input type="text" placeholder="Price">';
+            cell4.innerHTML = '<button class="custom-edit-button" onclick="toggleEdit(this)"><i class="fas fa-pencil-alt custom-edit-icon"></i></button><button class="delete-button" onclick="confirmDelete(this)"><i class="fas fa-trash"></i></button>';
+        }
+
+    </script>
+</body>
+</html>
